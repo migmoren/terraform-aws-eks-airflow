@@ -1,0 +1,15 @@
+airflow:
+  service:
+    type: ClusterIP
+  webReplicas: 1
+  config:
+    AIRFLOW__CORE__LOGGING_LEVEL: DEBUG
+    AIRFLOW__CORE__LOAD_EXAMPLES: True
+
+workers:
+  replicas: 1
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 1Gi

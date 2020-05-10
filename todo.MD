@@ -1,0 +1,6 @@
+- Make a list of issues so we can add there all the findings
+- Now is working as a LoadBalancer Type to expose the service, check out if we need to restrict that with ingress
+- Review security groups
+- Make a script to execute all commands once the EKS cluster is created 
+- Check out in detail [Airflow chart](https://hub.helm.sh/charts/stable/airflow/2.4.4) to add more nice features to the cluster (like the EFS)
+- Analyze [puckel image](https://github.com/puckel/docker-airflow) used for this chart and analyze if a customized image should replace it 
