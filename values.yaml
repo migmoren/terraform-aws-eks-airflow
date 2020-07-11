@@ -13,3 +13,14 @@ persistence:
   enabled: true
   accessMode: ReadWriteOnce
   size: 1Gi
+
+webserver:
+  # Create initial user.
+  defaultUser:
+    enabled: true
+    role: Admin
+    username: admin-mike
+    email: miguel.moreno@wizeline.com
+    firstName: admin mike
+    lastName: moreno
+    password: adminmike
