@@ -21,10 +21,10 @@ To have K8s cluster running:
 Execute Terraform commands:
 
 ```
-terraform init
+terraform init --var-file=terraform.tfvars
 ```
 ```
-terraform apply
+terraform apply --var-file=terraform.tfvars
 ```
 Once that the cluster is created, set the kubectl context:
 
@@ -83,7 +83,7 @@ helm del --purge airflow
 To destroy the EKS cluster, we run:
 
 ```
-terraform destroy 
+terraform destroy --var-file=terraform.tfvars
 ```
 
 
