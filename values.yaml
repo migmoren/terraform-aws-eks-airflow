@@ -1,6 +1,6 @@
 airflow:
   service:
-    type: ClusterIP
+    type: LoadBalancer
   webReplicas: 1
   config:
     AIRFLOW__CORE__LOGGING_LEVEL: DEBUG

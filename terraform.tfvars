@@ -7,6 +7,18 @@ tags = {
   Team    = "Wizeline"
 }
 
+public_tags = {
+  Project                  = "Airflow"
+  Team                     = "Wizeline"
+  "kubernetes.io/role/elb" = "1"
+}
+
+private_tags = {
+  Project                           = "Airflow"
+  Team                              = "Wizeline"
+  "kubernetes.io/role/internal-elb" = "1"
+}
+
 prefix_name = "airflow"
 
 cidr                        = "10.0.0.0/16"

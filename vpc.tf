@@ -15,17 +15,16 @@ module "vpc" {
   name = "${var.prefix_name}-vpc-eks"
   cidr = var.cidr
   azs  = data.aws_availability_zones.available.names
-  #private_subnets      = [var.private_subnets]
   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  #public_subnets       = [var.public_subnets]
   public_subnets       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   enable_nat_gateway   = true
   single_nat_gateway   = true
   enable_dns_hostnames = true
 
-  tags = merge(map("Name", "${var.prefix_name}-vpc-eks"), var.tags)
+  tags = merge(map("Name", "${var.prefix_name}-vpc-eks"), map("kubernetes.io/cluster/${var.cluster_name}", "shared"), var.tags)
 
-  private_subnet_tags = merge(map("Name", "${var.prefix_name}-private-subnet-eks"), var.tags)
-  public_subnet_tags  = merge(map("Name", "${var.prefix_name}-public-subnet-eks"), var.tags)
+  private_subnet_tags = merge(map("Name", "${var.prefix_name}-private-subnet-eks"), map("kubernetes.io/cluster/${var.cluster_name}", "shared"), var.private_tags)
+  public_subnet_tags  = merge(map("Name", "${var.prefix_name}-public-subnet-eks"), map("kubernetes.io/cluster/${var.cluster_name}", "shared"), var.public_tags)
+
 
 }

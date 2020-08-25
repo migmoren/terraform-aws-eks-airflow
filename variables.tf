@@ -14,7 +14,19 @@ variable "cluster_name" {
 }
 
 variable "tags" {
-  description = "Additional tags used into terraform-terraform-labels module."
+  description = "Additional tags used into terraform-labels module."
+  type        = map(string)
+  default     = {}
+}
+
+variable "public_tags" {
+  description = "Additional tags used into terraform-labels module for public subnets."
+  type        = map(string)
+  default     = {}
+}
+
+variable "private_tags" {
+  description = "Additional tags used into terraform-labels module for private subnets."
   type        = map(string)
   default     = {}
 }
